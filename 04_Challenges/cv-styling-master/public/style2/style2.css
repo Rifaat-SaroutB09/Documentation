@@ -1,0 +1,292 @@
+
+
+/* #competencies {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "competencies section1 section2"
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . ."; 
+  }
+  .competencies { grid-area: competencies; }
+  #skills-primary { grid-area: section1; }
+  #skills-secondary { grid-area: section2; } */
+
+
+  /* #experiences{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Experience experience-1 ."
+      ". experience-2 ."
+      ". . ."
+      ". . ."
+      ". . ."; 
+  }
+  .experiences { grid-area: Experience; }
+ 
+
+
+  .experience{
+    grid-column-start: 2;
+}
+
+  
+ #education{  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Education Eduaction-1 ."
+      ". Education-2 ."
+      ". . ."
+      ". . ."
+      ". . .";
+  }
+  
+
+  
+ 
+  #education .experience{
+    grid-column-start: 2;
+}
+ 
+  
+ #hobbies{  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Education Eduaction-1 ."
+      ". Education-2 ."
+      ". . ."
+      ". . ."
+      ". . .";
+  }
+   */
+
+ 
+  /* #hobbies ul{
+    grid-column-start: 2;
+} */
+
+body{
+    background-color: white;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+header h1{
+
+
+}
+ 
+h1::after {
+    content: "";
+    display: block;
+    padding: 1px 0 0;
+    margin: 1rem 0;
+    background-color: rgba(202, 180, 180, 0.4);
+  }
+
+
+header h2{display: none;}
+
+
+#about h3{display: none;}
+
+
+
+#contact{display: none;}
+
+
+ 
+  
+  h3 {margin-top: 0;font-weight: bolder;font-size: 1.5rem;}
+  
+  h4 {margin-top: 1rem;}
+  
+  img {
+    top: 30px;
+    width: 150px;
+    padding-left: 1200px;
+    padding-top: 100px;
+    padding-bottom: 0;
+    transform: rotate(-20deg)
+  }
+  
+  body > div {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  
+
+  #about {
+    max-width: 70%;
+    color: rgb(138, 129, 129);
+    word-spacing: 4px;
+    margin-bottom: 100px;
+  }
+  
+  #competencies {
+    
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+  }
+  
+  section {
+    margin-bottom: 100px;
+  }
+  
+  #competencies h3 { 
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0 35px 0 0;
+  }
+  
+  .skills {
+    border-left: 1px solid black;
+    padding-left: 5px;
+    max-width: 60%;
+  }
+  
+  .skills-primary {
+    display: flex;
+  }
+  
+  .skills-primary > div,
+  .skills-secondary > div {
+    width: 33.33%;
+    margin: 5px;
+    padding: 12px 5px;
+    color: white;
+    background-color: rgb(0, 129, 119);
+  }
+  
+  .skills-secondary {
+    display: flex;
+    grid-row: 2/2;
+    grid-column: 2/2;
+    font-size: 0.8rem;
+  }
+  .skill {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  
+  .skills-secondary span > i {
+    font-size: 0.5rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .skills-primary span > i {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+  }
+  
+
+  div.skills-primary [data-skill="5"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  
+  div.skills-primary [data-skill="3"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  
+  div.skills-primary [data-skill="1"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  
+  div.skills-primary [data-skill="3"] span::after {
+    content: "\2605 \2605 \2605 ";
+    float: right;
+    font-size: 1.5rem;
+  }
+  
+  div.skills-primary [data-skill="5"] span::after {
+    content: "\2605 \2605 \2605 ";
+    float: right;
+    font-size: 1.5rem;
+  }
+  
+  div.skills-primary [data-skill="1"] span::after {
+    content: "\2605";
+    float: right;
+    font-size: 1.5rem;
+  }
+  
+
+  div.skills-secondary [data-skill="5"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+    font-size: 1rem;
+  }
+  
+  div.skills-secondary [data-skill="9"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+    font-size: 1rem;
+  }
+  
+  div.skills-secondary [data-skill="7"] span {
+    padding: 0rem 0.5rem;
+    width: 90%;
+  }
+  
+  div.skills-secondary [data-skill="5"] span::after {
+    content: "\2605 \2605 \2605 ";
+    float: right;
+    font-size: 1.0625rem;
+  }
+  
+  div.skills-secondary [data-skill="9"] span::after {
+    content: "\2605 \2605 \2605 \2605 \2605 ";
+    float: right;
+    font-size: 1.0625rem;
+  }
+  
+  div.skills-secondary [data-skill="7"] span::after {
+    content: "\2605 \2605\2605\2605";
+    float: right;
+    font-size: 1.0625rem;
+  }
+  
+  
+  #experiences,
+  #education,
+  #hobbies {
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: auto;
+  }
+  
+  #experiences h3,
+  #education h3,
+  #hobbies h3 {
+    grid-column: 1/2;
+  }
+  
+  #experiences :not(h3),
+  #education :not(h3),
+  #hobbies :not(h3) {
+    grid-column: 2/3;
+  }
