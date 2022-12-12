@@ -17,4 +17,17 @@ UPDATE   students SET Points = 400 WHERE Name = 'Basma';
 7)
 UPDATE   students SET Points = 100 WHERE Name = 'Alex';
 
+8)CREATE TABLE "graduates"(
+       "ID"  INTEGER Not NULL ,
+	   "Name" TEXT NOT NULL UNIQUE ,
+	   "Age" TEXT ,
+	   "Gender" TEXT,
+	   Points TEXT,
+	   "Graduation" text,
+	   PRIMARY key ("ID" AUTOINCREMENT)
+	   );
+SELECT * from students ;
 
+9)INSERT INTO graduates VALUES (1,'Layal' , 18 , 'M',300, 08/09/2018) ; 
+
+1
