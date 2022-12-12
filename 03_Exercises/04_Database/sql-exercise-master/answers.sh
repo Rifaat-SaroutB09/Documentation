@@ -50,3 +50,15 @@ SELECT company
 FROM emloyees
 WHERE Role = 'Graphic Designer '
 
+18)
+SELECT Name FROM students 
+WHERE max(Points)
+
+19)
+SELECT AVG(Points) FROM students
+
+20)
+SELECT name from students WHERE (Points>500)
+
+21)
+SELECT COLUMUN names LIKE %s% FROM students 
