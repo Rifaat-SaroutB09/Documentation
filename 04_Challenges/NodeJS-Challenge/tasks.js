@@ -83,7 +83,7 @@ function quit(){
 }
 
 /**
- * lists the help 
+ * list the help options for the program
  *
  * 
  */
