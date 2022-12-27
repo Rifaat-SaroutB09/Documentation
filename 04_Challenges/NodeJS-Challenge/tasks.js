@@ -34,16 +34,22 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+  text = text.replace("\n", " ");
+  text = text.trim();
+  text = text.split(" ");
+
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
-  
+  else if(text[0] === 'hello'){
+    hello(text[1]);
   }
+
+
   else if(text ==='help\n'){
     help();
   }
+  
   else{
     unknownCommand(text);
   }
@@ -65,11 +71,21 @@ function unknownCommand(c){
 /**
  * Says hello
  *
+ * @param  {string} text data typed by the user
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
-}
+function hello(x){
+  // let var1 = text.replace('\n', " ");
+  // let var2 = var1.trim();
+  // let myArray = var2.split(" ");
+  // let word1 = myArray[1];
+  // console.log('hello' + " " + word1 + '!')
+    console.log('hello ' + x + '!')
+    
+  }
+
+
+
 
 
 /**
