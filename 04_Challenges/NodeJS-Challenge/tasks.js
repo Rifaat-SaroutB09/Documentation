@@ -64,7 +64,7 @@ function onDataReceived(text) {
  * @returns {void}
  */
 function unknownCommand(c){
-  console.log('unknown command: "'+c.trim()+'"')
+  console.log('unknown command: "'+ c.trim() +'"')
 }
 
 
@@ -75,12 +75,17 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(x){
+
+  if(x==null){
+    console.log("hello!");
+  }
   // let var1 = text.replace('\n', " ");
   // let var2 = var1.trim();
   // let myArray = var2.split(" ");
   // let word1 = myArray[1];
   // console.log('hello' + " " + word1 + '!')
-    console.log('hello ' + x + '!')
+    else {
+      console.log('hello ' + x + '!')}
     
   }
 
