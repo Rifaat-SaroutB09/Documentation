@@ -33,28 +33,24 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+
 function onDataReceived(text) {
   text = text.replace("\n", " ");
   text = text.trim();
   text = text.split(" ");
-
-  if (text === 'quit\n' || text === 'exit\n') {
+  if (text[0] === 'quit'|| text[0] === 'exit') {
     quit();
   }
   else if(text[0] === 'hello'){
-    hello(text[1]);
+    hello(text);
   }
-
-
-  else if(text ==='help\n'){
+  else if(text[0] === 'help'){
     help();
   }
-  
   else{
-    unknownCommand(text);
+    unknownCommand(text[0]);
   }
 }
-
 
 /**
  * prints "unknown command"
@@ -67,28 +63,21 @@ function unknownCommand(c){
   console.log('unknown command: "'+ c.trim() +'"')
 }
 
-
-/**
- * Says hello
- *
- * @param  {string} text data typed by the user
- * @returns {void}
- */
 function hello(x){
+  if(x[1]===undefined){
+   console.log("hello!");}
+  else {
+     console.log('hello ' + x[1] + '!')}
+}
 
-  if(x==null){
-    console.log("hello!");
-  }
-  // let var1 = text.replace('\n', " ");
-  // let var2 = var1.trim();
-  // let myArray = var2.split(" ");
-  // let word1 = myArray[1];
-  // console.log('hello' + " " + word1 + '!')
-    else {
-      console.log('hello ' + x + '!')}
-    
-  }
+// I wanted to nest the function in the if clause or to have the hello function make the split and trim
 
+
+// let var1 = text.replace('\n', " ");
+// let var2 = var1.trim();
+// let myArray = var2.split(" ");
+// let word1 = myArray[1];
+// console.log('hello' + " " + word1 + '!')
 
 
 
@@ -110,7 +99,9 @@ function quit(){
  */
 function help(){
   console.log('hello: hello!');
+  console.log('hello name: hello name!');
   console.log('exit or quit: exit the application');
+  
 
 }
 
