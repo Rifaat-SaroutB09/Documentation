@@ -47,6 +47,8 @@ function onDataReceived(text) {
   else if(text[0] === 'help'){
     help();
   }
+  else if(text[0] === 'list'){
+    list();}
   else{
     unknownCommand(text[0]);
   }
@@ -68,6 +70,13 @@ function hello(x){
    console.log("hello!");}
   else {
      console.log('hello ' + x[1] + '!')}
+}
+
+function list(){
+  let list1=["write a command", "wait for response","commit changes"]
+  for(let i=0;i<list1.length;i++){
+    console.log("task:" + (i+1)+"-"+ " "+list1[i]+'\n');
+  }
 }
 
 // I wanted to nest the function in the if clause or to have the hello function make the split and trim
