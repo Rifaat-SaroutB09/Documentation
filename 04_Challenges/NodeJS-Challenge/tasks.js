@@ -51,7 +51,7 @@ function onDataReceived(text) {
     list();}
 
  else if(text[0] === 'add'){
-    add(text[1]);
+    add(text);
   }
   
 
@@ -89,11 +89,19 @@ function list(){
 
 
 function add(x){
-list1.push(x);
-for(let i=0;i<list1.length;i++){
-  console.log("task:" + (i+1)+"-"+ " "+list1[i] +'\n');
+if (x[1]===undefined){
+  console.log("error! A task should be added! ")
 }
+else {
+  list1.push(x);
+  for (let i=0;i<list1.length;i++){
+    console.log("task:" + (i+1)+"-"+ " "+list1[i] +'\n');
 }
+  
+  }
+  
+}
+
 
 
   // if(i=3){
