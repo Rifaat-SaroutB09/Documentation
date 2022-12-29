@@ -47,8 +47,14 @@ function onDataReceived(text) {
   else if(text[0] === 'help'){
     help();
   }
-  else if(text[0] === 'list'){
+  else if(text[0] === 'list'|| text[0]==='tasks'||text[0]==='task'){
     list();}
+
+ else if(text[0] === 'add'){
+    add(text[1]);
+  }
+  
+
   else{
     unknownCommand(text[0]);
   }
@@ -72,12 +78,32 @@ function hello(x){
      console.log('hello ' + x[1] + '!')}
 }
 
+let list1=["write a command", "wait for response","commit changes"];
+
 function list(){
-  let list1=["write a command", "wait for response","commit changes"]
+
   for(let i=0;i<list1.length;i++){
     console.log("task:" + (i+1)+"-"+ " "+list1[i]+'\n');
   }
 }
+
+
+function add(x){
+list1.push(x);
+for(let i=0;i<list1.length;i++){
+  console.log("task:" + (i+1)+"-"+ " "+list1[i] +'\n');
+}
+}
+
+
+  // if(i=3){
+  //   console.log("task:" + (i+1)+"-"+ " "+list1[i] + " "+ list[i+1] +'\n');
+  //   if(list1[i+1]===undefined){
+  //      console.log("task:" + (i+1)+"-"+ " "+list1[i])
+  //       break;
+    
+
+
 
 // I wanted to nest the function in the if clause or to have the hello function make the split and trim
 
