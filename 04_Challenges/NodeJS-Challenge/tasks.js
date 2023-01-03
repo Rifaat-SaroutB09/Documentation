@@ -143,11 +143,7 @@ function quit(){
  * 
  */
 function help(){
-  console.log('hello: hello!');
-  console.log('hello name: hello name!');
-  console.log('exit or quit: exit the application');
-  
-
+  console.log('\n','hello: hello!','\n','hello name: hello name!','\n','exit or quit: exit the application.', '\n', "list : show the list of tasks to be done.", '\n', "add: add a new task to the list",'\n',"remove: remove a task from the list",'\n');
 }
 
 // The following line starts the application
