@@ -35,6 +35,7 @@ function startApp(name){
  */
 
 function onDataReceived(text) {
+
   text = text.replace("\n", " ");
   text = text.trim();
   text = text.split(" ");
@@ -48,15 +49,22 @@ function onDataReceived(text) {
     help();
   }
   else if(text[0] === 'list'|| text[0]==='tasks'||text[0]==='task'){
-    list();}
-
- else if(text[0] === 'add'){
-    add(text);
+    list();
   }
-  
 
-  else{
-    unknownCommand(text[0]);
+ else if(text[0] === 'add')
+ {
+    text.shift();
+    add(text.join(" "));
+ }
+
+ else if (text[0] === 'remove') {
+    remove(text);
+ }
+
+
+else{
+   unknownCommand(text[0]);
   }
 }
 
@@ -89,40 +97,34 @@ function list(){
 
 
 function add(x){
-if (x[1]===undefined){
-  console.log("error! A task should be added! ")
-}
-else {
-  list1.push(x);
-  for (let i=0;i<list1.length;i++){
-    console.log("task:" + (i+1)+"-"+ " "+list1[i] +'\n');
-}
+  if(x === ""){
+    console.log("error!");
+  } else {
+    list1.push(x)
+    for(i = 0; i < list1.length; i++){
+      console.log(i + 1 + "- " + list1[i]);
+    }
   
   }
-  
 }
 
-
-
-  // if(i=3){
-  //   console.log("task:" + (i+1)+"-"+ " "+list1[i] + " "+ list[i+1] +'\n');
-  //   if(list1[i+1]===undefined){
-  //      console.log("task:" + (i+1)+"-"+ " "+list1[i])
-  //       break;
-    
-
-
-
-// I wanted to nest the function in the if clause or to have the hello function make the split and trim
-
-
-// let var1 = text.replace('\n', " ");
-// let var2 = var1.trim();
-// let myArray = var2.split(" ");
-// let word1 = myArray[1];
-// console.log('hello' + " " + word1 + '!')
-
-
+function remove(x) {
+  if (x == 'remove'|| x[1] ===undefined ) {
+     let var1=list1.splice(-1,1);
+     console.log(var1);
+    }
+  else if(x[1] === "1"){
+    let var2=list1.splice(0,1);
+     console.log(var2);
+    }
+  else if(x[1] === '2'){
+    let var3=list1.splice(1,1);
+     console.log(var3);
+    }
+  else{
+      console.log(list1);
+    } 
+  }
 
 
 /**
