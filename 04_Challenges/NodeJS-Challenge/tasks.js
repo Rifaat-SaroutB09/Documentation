@@ -109,22 +109,91 @@ function add(x){
 }
 
 function remove(x) {
-  if (x == 'remove'|| x[1] ===undefined ) {
-     let var1=list1.splice(-1,1);
-     console.log(var1);
+  if (x == 'remove' ) {
+     let var0=list1.splice(-1,1);
+      if (var0.length == 0){
+      console.log(
+        "no last task to remove!"
+      )}else{
+      console.log(var0);}
     }
-  else if(x[1] === "1"){
-    let var2=list1.splice(0,1);
-     console.log(var2);
+  else if(x[1] === '1'){
+    let var1=list1.splice(0,1);
+      if (var1.length == 0){
+      console.log(
+        "no first task to remove!"
+      )}else{
+      console.log(var1);}
     }
-  else if(x[1] === '2'){
-    let var3=list1.splice(1,1);
-     console.log(var3);
+  else if( x[1] === '2' ){
+    let var2=list1.splice(1,1);
+      if (var2.length == 0){
+      console.log(
+        "no 2nd task to remove!"
+      )}else{
+      console.log(var2);}
     }
-  else{
-      console.log(list1);
+    else if( x[1] === '3' ){
+      let var3=list1.splice(2,1);
+      if (var3.length == 0){
+      console.log(
+        "no third task to remove!"
+      )}else{
+      console.log(var3);}
+    }
+
+
+    else if( x[1] === '4' ){
+      let var4=list1.splice(3,1);
+      if (var4.length == 0){
+        console.log(
+        "no fourth task to remove!")}
+        else{console.log(var4);
+    }
+  }
+ 
+    else if( x[1] === '5' ){
+    let var5=list1.splice(4,1);
+     if (var5.length == 0){
+        console.log(
+        "no fifth task to remove!")}
+        else{console.log(var5);
+    }
+  }
+    else if( x[1] === '6' ){
+    let var6=list1.splice(5,1);
+     if (var6.length == 0){
+        console.log(
+        "no sixth task to remove!")}
+        else{console.log(var6);
+    }
+  }
+    else if( x[1] === '7' ){
+      let var7=list1.splice(6,1);
+      if (var7.length == 0){
+        console.log(
+        "no seventh task to remove!")}
+        else{console.log(var7);
+    }
+  }
+  
+    else if( x[1] === '8' ){
+    let var8=list1.splice(7,1);
+     if (var8.length == 0){
+        console.log(
+        "no eighth task to remove!")}
+        else{console.log(var8);
+    }
+  }
+    else{
+      console.log("You have entered a number greater than 8 and the task does not exist!");
     } 
   }
+
+function edit(x){
+
+  
+}
 
 
 /**
