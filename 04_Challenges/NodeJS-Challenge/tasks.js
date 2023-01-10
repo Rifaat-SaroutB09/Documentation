@@ -68,6 +68,15 @@ function onDataReceived(text) {
     edit(num, newtask);
   }
 
+else if (text[0] === "check") {
+    text.shift();
+    check(text);
+  }
+else if (text[0] === "uncheck") {
+    text.shift();
+    uncheck(text);
+  }
+
 else{
    unknownCommand(text[0]);
   }
@@ -92,14 +101,24 @@ function hello(x){
 }
 
 let list1=["write a command", "wait for response","commit changes"];
+var done = [false, true];
+
+// function list(){
+
+//   for(let i=0;i<list1.length;i++){
+//     console.log("task:" + (i+1)+"-"+ " "+list1[i]+'\n');
+//   }
+// }
 
 function list(){
-
-  for(let i=0;i<list1.length;i++){
-    console.log("task:" + (i+1)+"-"+ " "+list1[i]+'\n');
+  for(i = 0; i < list1.length; i++){
+    if(done[i] === true){
+      console.log(i + 1 + "- " + "[✓]" + list1[i]);
+    } else {
+      console.log(i + 1 + "- " + "[ ]" + list1[i]);
+    }  
   }
 }
-
 
 function add(x){
   if(x === ""){
@@ -140,6 +159,20 @@ function edit(a, b) {
     list1[list1.length - 1] = a + " " + b;
   } else {
     list1[a - 1] = b;
+  }
+}
+function check(x) {
+  if (x == "") {
+    console.log("error!!");
+  } else {
+    done[x - 1] = true;
+  }
+}
+function uncheck(x) {
+  if (x == "") {
+    console.log("error!!");
+  } else {
+    done[x - 1] = false;
   }
 }
 
