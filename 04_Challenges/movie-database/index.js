@@ -139,7 +139,16 @@ list3.sort(function(a, b) {
   res.send({status:200, data:list3});
 })
 
+//STEP 7: CREATE A ROUTE FOR MOVIE SEACH BY ID
+app.get('/movies/read/id/:text?', (req, res) => {
+  let declaredId = req.params.text;
+  if(declaredId<=movies.length){
+    res.send({status:200, data:movies[declaredId-1].title})
 
+  }else{
+    res.send({status:404, error:true, message:'the movie <ID> does not exist'})
+  }
+})
 
 
 //START SERVER
