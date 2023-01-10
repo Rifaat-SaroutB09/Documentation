@@ -61,7 +61,10 @@ function onDataReceived(text) {
  else if (text[0] === 'remove') {
     remove(text);
  }
-
+  else if (text[0] === "edit") {
+    num = text.slice(1, 2);
+    newtask = text.slice(2).join(" ");
+    edit(num, newtask);}
 
 else{
    unknownCommand(text[0]);
@@ -190,9 +193,15 @@ function remove(x) {
     } 
   }
 
-function edit(x){
 
-  
+function edit(a, b) {
+  if (a == "" && b == "") {
+    console.log("error! what do you want to edit?");
+  } else if (isNaN(a)) {
+    list1[list1.length - 1] = a + " " + b;
+  } else {
+    list1[a - 1] = b;
+  }
 }
 
 
