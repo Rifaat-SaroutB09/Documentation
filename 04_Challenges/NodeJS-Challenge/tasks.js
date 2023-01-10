@@ -192,7 +192,7 @@ function quit(){
  * 
  */
 function help(){
-  console.log('\n','hello: hello!','\n','hello name: hello name!','\n','exit or quit: exit the application.', '\n', "list : show the list of tasks to be done.", '\n', "add: add a new task to the list",'\n',"remove: remove a task from the list",'\n');
+  console.log('\n','hello: hello!','\n','hello name: hello name!','\n','exit or quit: exit the application.', '\n', "list : show the list of tasks to be done.", '\n', "add: add a new task to the list",'\n',"remove: remove a task from the list",'\n',"remove x: removes x task from the list", '\n', "edit x text: edit the text in the designated task in the list", '\n', "check x: checks x task in the list",'\n',"uncheck x: unchecks x task in the list");
 }
 
 // The following line starts the application
