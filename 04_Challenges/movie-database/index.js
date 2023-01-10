@@ -1,7 +1,7 @@
 // IMPORT DEPENDENCIES
- const express = require('express');
- const app = express();
- const port = process.env.PORT || 3000;
+const express = require('express');
+const app = express();``
+const port = process.env.PORT || 3000;
  
 
 //STEP 2:CREATE AN EXPRESS SERVER
@@ -97,8 +97,6 @@ app.get('/movies/update/:id', (req, res) => {
   movies[index] = movie;
   res.send({status:200, message:"ok", data:movie});
 });
-
-
 
 
 //START SERVER
