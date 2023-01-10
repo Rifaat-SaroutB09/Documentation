@@ -98,6 +98,49 @@ app.get('/movies/update/:id', (req, res) => {
   res.send({status:200, message:"ok", data:movie});
 });
 
+//STEP 6: CREATE A ROUTE FOR MOVIE SEARCH BY DATE
+app.get('/movies/read/by-date', (req, res) => {
+  var list1 = [];
+  for (let i in movies) {
+      list1.push([movies[i].title, movies[i].year]);
+  }
+  list1.sort(function(a, b) {
+  return a[1] - b[1];
+});
+ res.send({status:200, data:list1});
+})
+
+//STEP 6: CREATE A ROUTE FOR MOVIE SEARCH BY RATING
+
+app.get('/movies/read/by-rating', (req, res) => {
+  
+  var list2 = [];
+  for (let i in movies) {
+      list2.push([movies[i].title, movies[i].rating]);
+  }
+  list2.sort(function(a, b) {
+  return a[1] - b[1];
+});
+  res.send({status:200, data:list2});
+})
+
+//STEP 6: CREATE A ROUTE FOR MOVIE SEARCH BY TITLE
+
+app.get('/movies/read/by-title', (req, res) => {
+  
+  var list3 = [];
+  for (let i in movies) {
+      list3.push([movies[i].title]);
+  }
+
+list3.sort(function(a, b) {
+  return a[1] - b[1];
+});
+  res.send({status:200, data:list3});
+})
+
+
+
 
 //START SERVER
 //app.listen(3000);
